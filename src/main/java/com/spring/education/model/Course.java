@@ -1,8 +1,12 @@
 package com.spring.education.model;
 
-public class Course {
+import java.util.List;
+
+public class Course  extends  BaseEntity{
 
 
     private String courseName;
     private String coursePrice;
+
+    private List<Student> students;
 }
