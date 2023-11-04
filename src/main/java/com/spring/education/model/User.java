@@ -5,8 +5,9 @@ import jakarta.persistence.*;
 import java.util.List;
 
 public class User extends BaseEntity {
-
+    @Column(name = "user_name" , unique = true)
     private String username;
+    @Column(name = "password")
     private String password;
 
     @ManyToMany(mappedBy = "roles")
@@ -20,9 +21,13 @@ public class User extends BaseEntity {
             }
     )
     private List<Role> roles;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+
     private Student student;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private Admin admin;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+
     private Master master;
 }
