@@ -3,8 +3,19 @@ package com.spring.education.model;
 import com.spring.education.model.enums.Gender;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.xml.crypto.Data;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 @MappedSuperclass
 public class Person extends Boy {
 
